@@ -1,0 +1,44 @@
+Global Variables:
+  currentTurn
+  players = [player objects]
+  currently selected ship
+  last placed = map [shipObj : key]
+  ship by id = map [id: shipObj]
+
+
+setScreen:
+  make & attach DOM elements
+  attach event listeners
+
+select ship:
+  if no selected ship, select ship
+  if clicked on selected ship, deselect
+  if click on different ship, deselect current ship and select new ship
+
+select square:
+  if no selected ship => do nothing
+  if selected ship cant fit on the square => deselect ship
+  otherwise => move ship & deselect ship
+
+return ship:
+  if no selected ship => return
+  if selected ship not placed => return
+  return ship & deselect
+
+reset screen:
+  remove event listeners
+  remove all DOM elements
+  
+
+Board:
+
+check ship(key):
+  if ship can be placed at key => return true
+  else return false
+
+add ship (key):
+  add ship at key
+
+remove ship (key):
+  remove ship from placement
+

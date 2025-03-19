@@ -1,0 +1,16 @@
+Final reflection while adding to portfolio:
+
+- The end product turned out very different to the initial plans, leading to alot of re-writing & wasted time
+  - Have set functionality from the beginning and stick to it => if further functionality is wanted, add it on as a new feature once the main functionality is finished
+  - Plan from top down - think about the main functions & flow of the code, and what data structures are required => narrow down to smaller functions & update the higher order functions & data structures as required
+  - Try not to get stuck in the details - save time by not planning down to the last variable/argument initially. If needed, can always update & expand the plan when the picture is a bit clearer. 
+
+- Layout is still not optimal:
+  - Not enough separation between rendering UI & game logic/internal data.
+  - This made the code hard to test & hard to maintain => more bugs
+  - Now that I know how React functions, something similar would have been better, where just the player/board/ship states are saved in data structures, and the dom is re-rendered using the data whenever something happens in the game.
+  - Further separation of modules according to functionality would have been better, as it results in easier maintainability without having to read through many lines of code.
+
+- Otherwise, I'm overall satisfied with the logic & data structures used in this code. I think that I wrote it to the best of my capabilities at the time.
+
+- If I had to remake this project, the classes board & ship will be turned into components, with the data structures stored as state & DOM elements being returned. This would make full use of React functionality by combining both UI & logic into one component. 

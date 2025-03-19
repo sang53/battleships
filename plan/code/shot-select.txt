@@ -1,0 +1,37 @@
+shotSelect(players):
+  set up screen
+  setup turn()
+
+setup turn(board):
+  display current players ships
+  attach event listeners
+  fill out info for display -> ships (+ hp?), shots, last turn hits & misses
+
+select squares(event):
+  if selected square => unselect & disable progression
+  if only 1 shot to choose => unselect square & select new square
+  if too many selected => return
+  otherwise select square
+  if enough selected => enable progression
+
+confirm shots(event):
+  board receives hit/s
+  add shot squares DOM class
+  calculate ships left alive
+  go to next turn()
+
+next turn():
+  after switch screen
+  if cpu => cpu shots(board) => return
+
+  hide current players ships
+  switch turn
+  setup turn (board)
+
+Board.receiveShot():
+  add shot to shotSet
+  if ship is hit => ship.receiveHit()
+  return shipObj if hit
+
+Ship.receiveHit():
+  add 1 to hits

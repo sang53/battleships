@@ -1,0 +1,26 @@
+Main Points:
+
+- Minimise unecessary data structures (eg, Board.deadShips & Board.aliveShips)
+  => takes extra overhead memory - especially when little to no time complexity/code readability is saved
+  => creates more work to maintain
+  => harder to change when needed
+
+- Maximise testability:
+  => More object oriented code leads to easier testing
+  => Minimise global variables
+  => perhaps use singleton classes
+
+- When dealing with smaller numbers of data, code readability & ease of maintenance is king
+  => keep data structures simple -> use an interface to access data as required
+  => keep algorithms simple & easy to follow 
+
+- Move helper functions back into the modules they are used in
+  => only separate into separate module if they are used in multiple different places
+  => minimises public interfaces which is easier to maintain
+
+Plan:
+
+- move *-helper.js functions back into original module
+- minimise data structures as necessary & write data interfaces instead
+- Minimise "global"/public variables & use singletons instead -> in ES6 the singleton pattern is not recommended, as you object literal creation is possible. 
+- test & write tests for private/non-export functions by using process.env

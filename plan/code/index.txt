@@ -1,0 +1,95 @@
+Modules:
+
+init:
+  make start screen():
+    make & add DOM elements according to battleship-start-screen.png
+    add event listeners to buttons
+    make example boards & run animation --> future after learning animations
+
+  open guide(event):
+    open Modal
+    attach event listener to close
+
+  close guide(event):
+    close Modal
+    remove event listener
+  
+  open settings(event):
+    open Modal
+    attach event listeners
+
+  close settings(event):
+    close Modal
+    remove event listeners
+  
+  confirm settings(event):
+    change game settings
+    remove event listeners
+  
+  update settings div (number of shots, number of ships, shot type, opponent):
+    update innerText of settings div
+  
+  next stage():
+    make players => makes boards & ships as well
+
+Player:
+  properties:
+    boardObj reference
+    player number
+    human vs computer
+
+  constructor:
+    make board
+
+Board:
+  properties:
+    Squares map = [key:square element]
+    shot squares set = [key]
+    ship squares map = [key:shipObj]
+    alive ships set = [shipObj]
+    dead ships set = [shipObj]
+    number of sides;
+
+  constructor(num of sides, num of ships):
+    make board element (hidden to start)
+    make square elements & add to map (num of sides)
+    append square elements to board element
+    
+    Ship.make ships (number of ships)
+    store in alive ships
+  
+
+Ship:
+  properties:
+    length
+    orientation
+    hits
+    reference to DOM element
+
+  static methods:
+    makeShips(num):
+      for num:
+        make ship DOM element
+        make ship obj
+      return [ship objects]
+
+DOM Helpers:
+  makeElement(tag, [...[attribute:value]], innerText):
+    create element
+    assign attributes
+    assign innerText
+    return element
+  
+  insertRelative(element, reference, relative):
+    get parentNode of reference
+    if "before" => parentNode.insertBefore(reference)
+    else => parentNode.insertBefore(reference.nextSibling --make sure it exists first)
+  
+Game Settings:
+  global variables:
+    number of sides
+    number of ships
+    shot mode
+
+  change settings(input object):
+    set global variables according to input

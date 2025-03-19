@@ -1,0 +1,63 @@
+Reflection:
+This task/grouping oriented structure ended up being messy and hard to follow for the following reasons:
+  - required a main GameController() which controlled the order of function to run. This was very difficult to parse &  follow as it ended up very long with many different routes it could take according to cpu vs human.
+  - resulted in sequential functions split up into many different modules. Again, very difficult to follow and keep track of what was going on & where the code is even found.
+  - required many global/"export" variables, as not all data could be returned to GameController to be used in the next step. This lead to non-modular & non-testable functions.
+
+Corrections:
+Structure:
+  - game stage oriented structure, where (non-helper) functions that run together are in the same module.
+  - improved readability, as sequential functions are next to each other
+  - easier to follow the code, as the gamestage flow logic is broken up into digestable relevant parts
+  - reduced export functions & variables, leading to modular & testable functions
+
+Focus on modularity & testability:
+  - make sure functions take used data as arguments
+  - separate functions according to basic steps
+  - try to keep functions pure -> instead of directly manipulating data structures, return & replace them
+  - adhere to TTD paradigm properly -> previously gave up because most of the functions ended up being non-testable
+
+
+
+Old Structure Plan:
+
+Main flow of the game:
+
+Game Controller - function
+gamestate: integer 
+currentStage: string
+Uses custom event to run function
+
+Modules:
+init:
+  stage 0:
+    player vs computer
+    customise rules - if made
+    placing of ships
+  
+DOMOutput:
+  all stages
+  handles manipulating DOM
+
+DOMInput:
+  all stages
+  handles DOM inputs
+
+GameLogic:
+  handles all logic of the game
+
+classes:
+Player:
+  computer vs human
+  reference to board
+
+Board:
+  reference to squares (Map)
+  reference to ships (Map)
+  reference to shots (Map)
+
+Ship:
+  hits
+  length
+
+

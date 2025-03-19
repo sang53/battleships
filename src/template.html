@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BattleShip</title>
+    <body>
+      <div id="main">
+        <dialog id="rules-modal">
+          <div class="flex-column">
+            <h2>How to Play</h2>
+            <div>
+              Battleship is a two-player board game where players try to guess
+              the location of the opponent's warships and sink them by firing
+              shots into their board.
+            </div>
+            <div>
+              In single player, you will always be Player 1.<br />
+              In multiplayer, the game will alert which player's turn it is.<br /><b>
+                The opponent must not look at the screen until it is their
+                turn.</b
+              >
+            </div>
+            <div>
+              Each player places ships on a 10x10 grid, keeping their ships'
+              locations secret from their opponent. The ships can be placed
+              horizontally or vertically.
+            </div>
+            <div>
+              Players take turns selecting shots to fire onto their opponents
+              board, which are labelled as hits or misses after firing.
+            </div>
+            <button id="close-rules">Close</button>
+          </div>
+        </dialog>
+        <dialog id="settings-modal">
+          <form id="settings-form" class="flex-column">
+            <fieldset class="flex-column">
+              <legend>Choose Opponent:</legend>
+              <div>
+                <label for="computer">Computer: </label
+                ><input name="opponent" type="radio" id="computer" checked />
+              </div>
+              <div>
+                <label for="player">Player: </label
+                ><input name="opponent" type="radio" id="player" />
+              </div>
+            </fieldset>
+            <fieldset class="flex-column">
+              <legend>Shots Per Turn:</legend>
+              <div>
+                <label for="cluster">Cluster (1 / Ship): </label
+                ><input name="shots" type="radio" id="cluster" checked />
+              </div>
+              <div>
+                <label for="single">Single: </label
+                ><input name="shots" type="radio" id="single" />
+              </div>
+            </fieldset>
+            <button id="settings-close">Confirm</button>
+          </form>
+        </dialog>
+        <dialog id="switch-screen">
+          <div class="flex-column">
+            <div id="player-turn"></div>
+            <button>Ready!</button>
+          </div>
+        </dialog>
+      </div>
+    </body>
+  </head>
+</html>

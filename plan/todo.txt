@@ -1,0 +1,10 @@
+Bugs:
+  Make sure all player references are 1 & 2
+  Ship placement - rotating ships after selecting them off the board rotates them
+  shot select - 2 player ships do not hide properly
+
+Improvements:
+  Start screen - have some random ships and random shots placed => periodically update?
+  Add instructions
+  styling
+  Re-write tests

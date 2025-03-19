@@ -1,0 +1,43 @@
+random ship placement (board):
+  get random valid keys (ships)
+  add each ship according to key
+
+get random valid keys (ships):
+  for each ship => {
+    do:
+      generate random key
+    while !checkship
+  }
+
+generate random key(default settings.sides) {
+  return getKey([floor(random * sides), floor(random * sides)])
+}
+
+getCPUShots(number of shots, oppBoard) {
+  get every hit so far
+  organise into > 1 hits on ship & 1 hit on ship
+
+  cpuShots = getSmartShots
+  
+  while (cpuShots < number of shots):
+    get random key
+  
+  return cpuShots
+}
+
+getSmartShots(>1 hits, 1hit) {
+  cpuShots = Set()
+
+  for each hit in > 1 hits:
+    get adjacent shots in correct orientation
+    add to cpuShots
+  
+  if (cpuShots.size >= number of shots):
+    return cpuShots[:number of shots]
+
+  for each hit in 1 hit:
+    get adjacent shots in every orientation
+    add to cpuShots
+
+  return cpuShots
+}
