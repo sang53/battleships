@@ -1,7 +1,7 @@
 ## **Battleships Project**
 
-_[Portfolio link](https://portfolio-sang-won-cho.netlify.app/)_
-_[Deployed link](https://sang53.github.io/battleships/dist/index.html)_
+_[Portfolio link](https://sang53.github.io/)_
+_[Deploy link](https://sang53.github.io/battleships)_
 
 This project was made as part of The Odin Project online course to incorporate everything learned about THML, CSS & JavaScript.
 
