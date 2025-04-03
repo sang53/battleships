@@ -338,7 +338,7 @@ button {
   }
 }
 
-@media (max-width: 1800px) {
+@media (max-width: 2000px) {
   :root {
     --square-size: 50px;
     font-size: 20px;
