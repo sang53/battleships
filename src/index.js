@@ -17,7 +17,7 @@ startScreen();
 
 function startScreen() {
   document.querySelector("#main").classList.add("start-screen");
-  addToMain(makeElement("h1", [], "Play BattleShip!"));
+  addToMain(makeElement("h1", [], "Play Battleships!"));
   addToMain(getBoardsDiv());
   addToMain(getFooter());
   updateSettingsDiv();
@@ -60,7 +60,7 @@ function getRulesButton(openRules) {
   const rulesButton = makeElement(
     "button",
     [["id", "rules-button"]],
-    "How To Play",
+    "How To Play"
   );
   addListener(rulesButton, "click", openRules);
   return rulesButton;
@@ -70,7 +70,7 @@ function getSettingsButton(openSettings) {
   const settingsButton = makeElement(
     "button",
     [["id", "settings-button"]],
-    "Change Settings",
+    "Change Settings"
   );
   addListener(settingsButton, "click", openSettings);
   return settingsButton;
@@ -101,14 +101,14 @@ function openSettings() {
     settingsModal.querySelector("button"),
     "click",
     closeSettings,
-    true,
+    true
   );
 }
 
 function closeSettings(event) {
   const settingsModal = document.querySelector("#settings-modal");
   const formElements = settingsModal.querySelector(
-    "#settings-modal form",
+    "#settings-modal form"
   ).elements;
 
   SETTINGS.changeSettings({
