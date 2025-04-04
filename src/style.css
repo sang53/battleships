@@ -101,7 +101,7 @@ h6 {
   }
 
   @media (max-width: 600px) {
-    --square-size: 40px;
+    --square-size: 35px;
     font-size: 16px;
   }
 }
