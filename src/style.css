@@ -88,12 +88,22 @@ h6 {
   --button-border: 1px solid oklch(0.379 0.146 265.522);
   --button-shadow: 3px 3px 1px 1px oklch(0.282 0.091 267.935);
 
-  --square-size: 75px;
+  --square-size: 50px;
+  font-size: 20px;
 
   font-family: "Jura", system-ui, sans-serif;
-  font-size: 32px;
   font-weight: 500;
   background-color: var(--bgc-1);
+
+  @media (min-width: 1920px) {
+    --square-size: 75px;
+    font-size: 26px;
+  }
+
+  @media (max-width: 600px) {
+    --square-size: 40px;
+    font-size: 16px;
+  }
 }
 
 .hidden.ship,
@@ -138,7 +148,7 @@ fieldset {
 
 button {
   border-radius: 10px;
-  padding: 1rem 2rem;
+  padding: 0.75rem 1.5rem;
   user-select: none;
   transition: background-color 500ms;
 
@@ -166,30 +176,35 @@ button {
   justify-content: center;
   align-items: center;
   gap: 3vh;
-  padding-block: 1rem;
+  padding: 1rem;
 }
 
 #boards {
-  width: 100%;
+  align-self: stretch;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   gap: 2rem;
+
+  @media (max-width: 1300px) {
+    flex-direction: column;
+  }
 }
 
 #main.start-screen {
   > h1 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   #start-button {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   > #footer {
     display: flex;
-    gap: 2rem;
     align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
 
     > #settings {
       display: flex;
@@ -198,10 +213,6 @@ button {
       box-shadow: 0 0 3px 2px black;
       padding: 1rem;
       background-color: var(--bgc-2);
-    }
-
-    > button {
-      padding: 1rem;
     }
   }
 }
@@ -328,32 +339,5 @@ button {
 
   &.selected {
     transform: scale(1.1);
-  }
-}
-
-@media (max-width: 2600px) {
-  :root {
-    --square-size: 60px;
-    font-size: 26;
-  }
-}
-
-@media (max-width: 2000px) {
-  :root {
-    --square-size: 50px;
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 1300px) {
-  #boards {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 550px) {
-  :root {
-    --square-size: 40px;
-    font-size: 16px;
   }
 }
