@@ -95,8 +95,8 @@ h6 {
   font-weight: 500;
   background-color: var(--bgc-1);
 
-  @media (min-width: 1920px) {
-    --square-size: 75px;
+  @media (min-width: 2000px) {
+    --square-size: 70px;
     font-size: 26px;
   }
 
